@@ -1,7 +1,6 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
-// mongodb://localhost:27017
-// mongodb+srv://avibhawnani:demo123@cluster0.j6hemek.mongodb.net/todos
-mongoose.connect("mongodb+srv://avibhawnani:demo123@cluster0.j6hemek.mongodb.net/todos");
+mongoose.connect(process.env.MONGO_URI);
 
 const todoSchema = mongoose.Schema({
     title:String,
