@@ -1,0 +1,41 @@
+/* Card.css */
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #3b77b6;
+    color: white;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  h2 {
+    margin: 0;
+  }
+  
+  p {
+    color: #555;
+  }
+
+  .card-button{
+  background-color: #b63b3b;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  }
+  
