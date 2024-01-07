@@ -59,6 +59,33 @@ app.put("/completed",async (req,res)=>{
 
 })
 
+app.delete("/todos/:id",async(req,res)=>{
+    const {id} = req.params;
+    
+
+    const result = await todo.deleteOne({_id:id})
+
+    if (result.deletedCount > 0) {
+        return res.status(200).json({ message: 'Todo deleted successfully' });
+    } 
+    else {
+        return res.status(404).json({ message: 'Todo not found or already deleted' });
+      }
+})
+
+app.delete("/deleteall",async(req,res)=>{
+
+    const result = await todo.deleteMany({});
+
+    if (result.deletedCount > 0) {
+        return res.status(200).json({ message: 'All todos deleted successfully' });
+    } 
+    else {
+        return res.status(404).json({ message: 'No todos found to delete' });
+      }
+
+})
+
 
 app.listen(PORT,()=>{
     console.log(`Server started at ${PORT}`);

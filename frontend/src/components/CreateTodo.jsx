@@ -23,6 +23,18 @@ const CreateTodo = () => {
                     alert(json.msg);
                 })
   }
+  function deleteAllTodos(){
+    fetch("http://localhost:3000/deleteall", {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+        .then(async function(res) {
+            const json = await res.json();
+            alert(json.message);
+        })
+  }
   return (
     <div>
         
@@ -30,6 +42,7 @@ const CreateTodo = () => {
             <input type="text" placeholder="Description" id="description" onChange={(e)=>setDescription(e.target.value)} style={{ padding: 10, margin: 10 }}/> <br/>
             <button onClick={createTodo} style={{ padding: 10, margin: 10 }}>Add ToDo</button>
             <Link to={"/todos"}><button style={{ padding: 10, margin: 10 }}>See Todos</button></Link>
+            <button style={{ padding: 10, margin: 10 }} onClick={()=>{deleteAllTodos()}}>Clear</button>
         
     </div>
   )
