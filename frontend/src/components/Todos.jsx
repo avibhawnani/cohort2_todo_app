@@ -34,7 +34,7 @@ const Todos = ({todos}) => {
   return (
     <>
     <div>
-        {todos.map(function(todo) {
+        {todos.length? (todos.map(function(todo) {
             return <div key={todo._id}>
                 <div className="card">
                     <div className="card-header">
@@ -51,7 +51,7 @@ const Todos = ({todos}) => {
                 </div>
                   
             </div>
-        })}
+        })):(<h3 style={{ padding: 5, margin: 2 }}>No Todos Found</h3>)}
     </div>
     </>
   )
